@@ -13,7 +13,6 @@ const router = new Router();
  */
 router.use(basicRoutes.routes());
 router.use(basicRoutes.allowedMethods());
-
 // TODO: 在这里添加其他路由模块
 // import userRoutes from "./user.routes.js";
 // router.use(userRoutes.routes());

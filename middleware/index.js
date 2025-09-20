@@ -8,7 +8,7 @@ import bodyParser from "koa-bodyparser";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import errorHandler from "./error.middleware.js";
-import { corsConfig, bodyParserConfig } from "../config/app.config.js";
+import { bodyParserConfig } from "../config/app.config.js";
 
 // 获取当前文件的目录路径
 const __filename = fileURLToPath(import.meta.url);
@@ -21,9 +21,6 @@ const __dirname = dirname(__filename);
 const setupMiddleware = (app) => {
   // 错误处理中间件（必须在最前面）
   app.use(errorHandler);
-
-  // CORS中间件
-  app.use(cors(corsConfig));
 
   // 请求体解析中间件
   app.use(bodyParser(bodyParserConfig));

@@ -8,7 +8,7 @@ import bodyParser from "koa-bodyparser";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import errorHandler from "./error.middleware.js";
-import { corsConfig, bodyParserConfig } from "../config/app.conifg.js";
+import { corsConfig, bodyParserConfig } from "../config/app.config.js";
 
 // 获取当前文件的目录路径
 const __filename = fileURLToPath(import.meta.url);

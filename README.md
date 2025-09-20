@@ -33,7 +33,7 @@
 server/
 ├── app.js                  # 应用主入口文件
 ├── config/                 # 配置文件目录
-│   ├── app.conifg.js      # 应用配置（服务器、CORS、请求体解析）
+│   ├── app.config.js      # 应用配置（服务器、CORS、请求体解析）
 │   └── db.config.js       # 数据库配置
 ├── controllers/           # 控制器层（业务逻辑处理）
 ├── middleware/            # 中间件目录

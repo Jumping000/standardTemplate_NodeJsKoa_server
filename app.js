@@ -11,7 +11,7 @@ import {
 } from "./infrastructure/db.infrastructure.js";
 import setupMiddleware from "./middleware/index.js";
 import setupRoutes from "./routes/index.js";
-import { serverConfig } from "./config/app.conifg.js";
+import { serverConfig } from "./config/app.config.js";
 
 // 创建Koa应用实例
 const app = new Koa();

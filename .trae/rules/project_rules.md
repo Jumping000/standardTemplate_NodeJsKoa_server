@@ -23,6 +23,7 @@ server/
 ├── public/            # 静态资源
 ├── config/            # 配置文件
 ├── models/            # 数据模型层
+├── infrastructure/    # 基础设施初始化
 └── package.json       # 项目配置
 ```
 
@@ -34,6 +35,7 @@ server/
 - **controllers/**: 仅业务逻辑处理（请求处理、数据验证、响应格式化）
 - **middleware/**: 仅中间件（请求拦截、认证、日志等）
 - **routes/**: 仅路由定义（路径映射、HTTP方法绑定）
+- **infrastructure/**: 仅基础设施初始化（数据库连接、服务集成、系统初始化等）
 - **models/**: 仅数据模型（数据结构、数据库模型、验证规则、数据访问层、业务逻辑层）
   - **models/xxx/**: 用户相关数据模型
     - `xxxx.model.js` - 数据模型（映射表结构、类型、约束等）

@@ -6,8 +6,8 @@
 
 import Koa from "koa";
 import {
-  initializeDatabase,
-  closeDatabaseConnection,
+    initializeDatabase,
+    closeDatabaseConnection,
 } from "./infrastructure/db.infrastructure.js";
 import setupMiddleware from "./middleware/index.js";
 import setupRoutes from "./routes/index.js";
@@ -29,22 +29,22 @@ const { port: PORT, host: HOST } = serverConfig;
  * 启动应用服务器
  */
 const startServer = async () => {
-  try {
-    // 初始化数据库
-    const dbInitialized = await initializeDatabase();
-    if (!dbInitialized) {
-      console.error("❌ 数据库初始化失败，服务器启动中止");
-      process.exit(1);
-    }
+    try {
+        // 初始化数据库
+        const dbInitialized = await initializeDatabase();
+        if (!dbInitialized) {
+            console.error("❌ 数据库初始化失败，服务器启动中止");
+            process.exit(1);
+        }
 
-    // 启动HTTP服务器
-    app.listen(PORT, HOST, () => {
-      console.log(`🚀 Server is running on http://${HOST}:${PORT}`);
-    });
-  } catch (error) {
-    console.error("❌ 服务器启动失败:", error.message);
-    process.exit(1);
-  }
+        // 启动HTTP服务器
+        app.listen(PORT, HOST, () => {
+            console.log(`🚀 Server is running on http://${HOST}:${PORT}`);
+        });
+    } catch (error) {
+        console.error("❌ 服务器启动失败:", error.message);
+        process.exit(1);
+    }
 };
 
 /**
@@ -52,16 +52,16 @@ const startServer = async () => {
  * @param {string} signal - 接收到的系统信号
  */
 const gracefulShutdown = async (signal) => {
-  console.log(`\n📡 收到 ${signal} 信号，开始优雅关闭...`);
+    console.log(`\n📡 收到 ${signal} 信号，开始优雅关闭...`);
 
-  try {
-    await closeDatabaseConnection();
-    console.log("👋 服务器已优雅关闭");
-    process.exit(0);
-  } catch (error) {
-    console.error("❌ 关闭过程中发生错误:", error.message);
-    process.exit(1);
-  }
+    try {
+        await closeDatabaseConnection();
+        console.log("👋 服务器已优雅关闭");
+        process.exit(0);
+    } catch (error) {
+        console.error("❌ 关闭过程中发生错误:", error.message);
+        process.exit(1);
+    }
 };
 
 // 监听进程信号

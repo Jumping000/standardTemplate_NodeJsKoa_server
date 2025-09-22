@@ -29,8 +29,7 @@ export const corsConfig = {
 export const staticConfig = {
   root: "./public", // 静态文件根目录
   opts: {
-    maxAge: 1000 * 60 * 60 * 24 * 7, // 缓存时间：7天
-    gzip: true, // 启用gzip压缩
-    index: "index.html", // 默认首页文件
+    maxAge: 1000 * 60 * 60 * 24 * 1, // 缓存时间：7天
+    index: false, // 默认首页文件 参数可以是字符串（index.html） 也可以是false
   },
 };

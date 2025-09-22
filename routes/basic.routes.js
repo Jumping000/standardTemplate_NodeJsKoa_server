@@ -19,21 +19,4 @@ router.get("/", async (ctx) => {
   };
 });
 
-/**
- * 健康检查路由
- */
-router.get("/api/health", async (ctx) => {
-  ctx.body = {
-    status: "healthy",
-    uptime: process.uptime(),
-    timestamp: new Date().toISOString(),
-    memory: {
-      used:
-        Math.round((process.memoryUsage().heapUsed / 1024 / 1024) * 100) / 100,
-      total:
-        Math.round((process.memoryUsage().heapTotal / 1024 / 1024) * 100) / 100,
-    },
-  };
-});
-
 export default router;

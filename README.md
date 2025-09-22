@@ -38,7 +38,6 @@ server/
 ├── controllers/           # 控制器层（业务逻辑处理）
 ├── middleware/            # 中间件目录
 │   ├── index.js          # 中间件配置管理
-│   └── error.middleware.js # 错误处理中间件
 ├── routes/                # 路由定义
 │   ├── index.js          # 路由管理器
 │   └── basic.routes.js   # 基础路由

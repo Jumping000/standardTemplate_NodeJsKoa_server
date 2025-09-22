@@ -4,7 +4,7 @@
  */
 
 import bodyParser from "koa-bodyparser";
-import cors from "koa-cors";
+import cors from "@koa/cors";
 import serve from "koa-static";
 import {
   bodyParserConfig,

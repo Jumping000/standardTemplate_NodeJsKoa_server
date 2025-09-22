@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@koa/cors':
+        specifier: ^5.0.0
+        version: 5.0.0
       '@koa/router':
         specifier: ^14.0.0
         version: 14.0.0
@@ -20,9 +23,6 @@ importers:
       koa-bodyparser:
         specifier: ^4.4.1
         version: 4.4.1
-      koa-cors:
-        specifier: ^0.0.16
-        version: 0.0.16
       koa-static:
         specifier: ^5.0.0
         version: 5.0.0
@@ -44,6 +44,10 @@ packages:
 
   '@hapi/bourne@3.0.0':
     resolution: {integrity: sha512-Waj1cwPXJDucOib4a3bAISsKJVb15MKi9IvmTI/7ssVEm6sywXGjVJDhl6/umt1pK1ZS7PacXU3A1PmFKHEZ2w==}
+
+  '@koa/cors@5.0.0':
+    resolution: {integrity: sha512-x/iUDjcS90W69PryLDIMgFyV21YLTnG9zOpPXS7Bkt2b8AsY3zZsIpOLBkYr9fBcF3HbkKaER5hOBZLfpLgYNw==}
+    engines: {node: '>= 14.0.0'}
 
   '@koa/router@14.0.0':
     resolution: {integrity: sha512-LBSu5K0qAaaQcXX/0WIB9PGDevyCxxpnc1uq13vV/CgObaVxuis5hKl3Eboq/8gcb6ebnkAStW9NB/Em2eYyFA==}
@@ -485,9 +489,6 @@ packages:
 
   koa-compose@4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
-
-  koa-cors@0.0.16:
-    resolution: {integrity: sha512-s15knPxe3AJBi2I/ZMPL0pSqU+PLYLO6k5tI0AqClkzavowvocPlSdFUwaHNqtjHMhsGmiq2tiX/25iILJx9YA==}
 
   koa-send@5.0.1:
     resolution: {integrity: sha512-tmcyQ/wXXuxpDxyNXv5yNNkdAMdFRqwtegBXUaowiQzUKqJehttS0x2j0eOZDQAyloAth5w6wwBImnFzkUz3pQ==}
@@ -973,6 +974,10 @@ snapshots:
 
   '@hapi/bourne@3.0.0': {}
 
+  '@koa/cors@5.0.0':
+    dependencies:
+      vary: 1.1.2
+
   '@koa/router@14.0.0':
     dependencies:
       debug: 4.4.3(supports-color@5.5.0)
@@ -1451,8 +1456,6 @@ snapshots:
       type-is: 1.6.18
 
   koa-compose@4.1.0: {}
-
-  koa-cors@0.0.16: {}
 
   koa-send@5.0.1:
     dependencies:

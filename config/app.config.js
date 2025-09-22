@@ -17,3 +17,20 @@ export const bodyParserConfig = {
   formLimit: "100mb", // 表单数据大小限制
   textLimit: "100mb", // 文本数据大小限制
 };
+
+// CORS跨域配置
+export const corsConfig = {
+  origin: "*", // 允许所有域名访问，生产环境建议设置具体域名
+  allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowHeaders: ["Content-Type", "Authorization", "Accept"],
+};
+
+// 静态文件服务配置
+export const staticConfig = {
+  root: "./public", // 静态文件根目录
+  opts: {
+    maxAge: 1000 * 60 * 60 * 24 * 7, // 缓存时间：7天
+    gzip: true, // 启用gzip压缩
+    index: "index.html", // 默认首页文件
+  },
+};

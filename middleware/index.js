@@ -4,13 +4,25 @@
  */
 
 import bodyParser from "koa-bodyparser";
-import { bodyParserConfig } from "../config/app.config.js";
+import cors from "koa-cors";
+import serve from "koa-static";
+import {
+  bodyParserConfig,
+  corsConfig,
+  staticConfig,
+} from "../config/app.config.js";
 
 /**
  * 配置应用中间件
  * @param {Object} app - Koa应用实例
  */
 const setupMiddleware = (app) => {
+  // CORS跨域中间件
+  app.use(cors(corsConfig));
+
+  // 静态文件服务中间件
+  app.use(serve(staticConfig.root, staticConfig.opts));
+
   // 请求体解析中间件
   app.use(bodyParser(bodyParserConfig));
 };

@@ -4,15 +4,14 @@
  */
 
 import Router from "@koa/router";
-import { sendSuccess, sendError } from "../utils/response.util.js";
-
 const router = new Router();
 
 /**
  * 根路径路由 - 欢迎页面
  */
 router.get("/", async (ctx) => {
-    sendSuccess(ctx, {}, "欢迎使用 Koa.js API 服务器");
+    ctx.body = "欢迎使用 Koa.js API 服务器";
+    ctx.status = 200;
 });
 
 export default router;

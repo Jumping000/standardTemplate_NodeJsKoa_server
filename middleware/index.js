@@ -7,6 +7,7 @@ import bodyParser from "koa-bodyparser";
 import cors from "@koa/cors";
 import serve from "koa-static";
 import logger from "./logger.middleware.js";
+import { errorHandler } from "./error.middleware.js";
 import {
     bodyParserConfig,
     corsConfig,
@@ -18,6 +19,9 @@ import {
  * @param {Object} app - Koa应用实例
  */
 const setupMiddleware = (app) => {
+    // 错误处理中间件
+    app.use(errorHandler);
+
     // 日志中间件
     app.use(logger);
 

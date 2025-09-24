@@ -4,10 +4,10 @@ export const errorHandler = async (ctx, next) => {
         await next();
     } catch (err) {
         // 设置默认状态码和错误信息
-        ctx.status = err.status || err.statusCode || 500;
+        ctx.status = (err && (err.status || err.statusCode)) || 500;
         ctx.body = {
             success: false,
-            message: err.message || 'Internal Server Error',
+            message: (err && err.message) || 'Internal Server Error',
         };
 
         // 可选：记录错误日志（如接入日志系统）

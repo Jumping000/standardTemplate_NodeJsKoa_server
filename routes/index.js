@@ -5,6 +5,7 @@
 
 import Router from "@koa/router";
 import basicRoutes from "./basic.routes.js";
+import userRoutes from "./user.routes.js";
 
 const router = new Router();
 
@@ -13,10 +14,10 @@ const router = new Router();
  */
 router.use(basicRoutes.routes());
 router.use(basicRoutes.allowedMethods());
-// TODO: 在这里添加其他路由模块
-// import userRoutes from "./user.routes.js";
-// router.use(userRoutes.routes());
-// router.use(userRoutes.allowedMethods());
+
+// 用户路由模块
+router.use(userRoutes.routes());
+router.use(userRoutes.allowedMethods());
 
 /**
  * 设置应用路由
